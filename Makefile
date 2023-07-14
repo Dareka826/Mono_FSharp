@@ -26,5 +26,6 @@ fsharp-10_2_3-void:
 	        curl -L "https://alpha.de.repo.voidlinux.org/current/fsharp-10.2.3_1.x86_64.xbps" | \
 	            tar xf - --zstd -C "./fsharp-10.2.3-void" ; \
 	    } ; \
-	    printf 'FSC="%s"\n' "./fsharp-10.2.3-void/usr/lib/mono/fsharp/fsc.exe" >env.sh; \
+	    [ -e "./fsharp-10.2.3-void/usr/lib/mono/fsharp/fsc.exe" ] ; \
+	    printf 'FSC="%s"\n' "./fsharp-10.2.3-void/usr/lib/mono/fsharp/fsc.exe" >./env.sh; \
 	}
